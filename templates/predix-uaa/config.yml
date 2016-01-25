@@ -1,0 +1,5 @@
+name: Predix Uaa
+description: |
+  UAA is a multi-tenant identity management service used in Cloud Foundry that's also available as a standalone OAuth2.0 server. Its primary role is as an OAuth2.0 provider to issue tokens to client apps to use when they act on behalf of Cloud Foundry users. UAA can act as an SSO service using SAML. It has endpoints for managing user accounts and for registering OAuth2.0 clients, as well as various other management functions.
+version: GA
+category: Predix Security Services

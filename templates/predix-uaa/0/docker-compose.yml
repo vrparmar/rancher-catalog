@@ -1,0 +1,24 @@
+uaa:
+  image: docker-registry:5000/predix-uaa
+  ports:
+    - "8083:8080"
+  links:
+    - db:db
+  extra_hosts:
+    - "docker-host:172.17.0.1"
+  environment:
+    DB_ENV_DB: uaadb
+    DB_ENV_USER: postgres
+    DB_ENV_PASS: postgres
+    SPRING_PROFILES_ACTIVE: postgresql
+    UAA_HOST: docker-host
+    UAA_PORT: 8083
+    UAA_BASEURL: http://docker-host:8083
+db:
+  image: postgres:latest
+  ports:
+    - "32772:5432"
+  environment:
+    POSTGRES_USER: postgres
+    POSTGRES_PASSWORD: postgres
+    POSTGRES_DB: uaadb
